@@ -1,0 +1,161 @@
+{
+  "version": "2026.1-tools",
+  "categories": [
+    {
+      "name": "Functionality & Logic",
+      "priority": "Critical",
+      "items": [
+        {
+          "id": "func_req",
+          "description": "Code implements intended feature/user story"
+        },
+        {
+          "id": "func_edge",
+          "description": "Edge cases and error scenarios handled",
+          "languages": ["Java", "JavaScript", "C", "C++"],
+          "tools": ["SpotBugs", "PMD", "Cppcheck", "Splint", "Valgrind"]
+        },
+        {
+          "id": "func_dead",
+          "description": "No dead code, bugs, or unused variables",
+          "languages": ["Java", "JavaScript", "C", "C++"],
+          "tools": ["PMD", "ESLint", "Cppcheck", "Clang-Tidy"]
+        }
+      ]
+    },
+    {
+      "name": "Readability & Maintainability",
+      "priority": "High",
+      "items": [
+        {
+          "id": "read_format",
+          "description": "Consistent formatting and naming conventions",
+          "languages": ["Java", "JavaScript", "React", "C", "C++"],
+          "tools": ["Checkstyle", "ESLint", "Prettier", "clang-format", "GCC -Wall"]
+        },
+        {
+          "id": "read_small",
+          "description": "Small, focused functions; duplication minimized"
+        },
+        {
+          "id": "read_comments",
+          "description": "Complex logic explained with comments/docstrings"
+        }
+      ]
+    },
+    {
+      "name": "Structure, Design & Dependencies",
+      "priority": "High",
+      "items": [
+        {
+          "id": "arch_fit",
+          "description": "Code fits existing architecture and layers"
+        },
+        {
+          "id": "arch_reuse",
+          "description": "Reusable logic in shared modules"
+        },
+        {
+          "id": "arch_deps",
+          "description": "Dependencies necessary and actively maintained",
+          "languages": ["JavaScript", "React", "Python"],
+          "tools": ["npm", "SonarQube"]
+        }
+      ]
+    },
+    {
+      "name": "Security & Data Protection",
+      "priority": "Critical",
+      "items": [
+        {
+          "id": "sec_input",
+          "description": "All inputs validated and sanitized",
+          "languages": ["Java", "JavaScript", "Python"],
+          "tools": ["SonarQube", "Semgrep", "Bandit"]
+        },
+        {
+          "id": "sec_auth",
+          "description": "Proper authentication/authorization in place"
+        },
+        {
+          "id": "sec_secrets",
+          "description": "No hardcoded secrets; secure config only"
+        },
+        {
+          "id": "sec_errors",
+          "description": "Error messages don't leak sensitive data"
+        }
+      ]
+    },
+    {
+      "name": "Performance, Reliability & Complexity",
+      "priority": "High",
+      "items": [
+        {
+          "id": "perf_ineff",
+          "description": "No obvious inefficiencies or N+1 queries",
+          "languages": ["C", "C++"],
+          "tools": ["AddressSanitizer", "ThreadSanitizer"]
+        },
+        {
+          "id": "perf_time",
+          "description": "Time complexity appropriate for expected inputs"
+        },
+        {
+          "id": "perf_space",
+          "description": "Space usage reasonable; no unnecessary memory use",
+          "languages": ["C", "C++"],
+          "tools": ["Valgrind"]
+        },
+        {
+          "id": "perf_async",
+          "description": "Long operations use async/batch patterns"
+        },
+        {
+          "id": "perf_fallbacks",
+          "description": "Errors handled gracefully with fallbacks"
+        }
+      ]
+    },
+    {
+      "name": "Testing & Quality",
+      "priority": "High",
+      "items": [
+        {
+          "id": "test_exists",
+          "description": "New logic has automated tests"
+        },
+        {
+          "id": "test_paths",
+          "description": "Tests cover success and failure paths"
+        },
+        {
+          "id": "test_checks",
+          "description": "Code builds and passes linting/type checks",
+          "languages": ["All"],
+          "tools": ["SonarQube", "SonarLint", "Error Prone", "OCLint", "Pylint"]
+        }
+      ]
+    },
+    {
+      "name": "Documentation & Observability",
+      "priority": "Medium",
+      "items": [
+        {
+          "id": "doc_api",
+          "description": "API/user-facing changes documented"
+        },
+        {
+          "id": "doc_config",
+          "description": "Config and run instructions current",
+          "languages": ["React", "Python"],
+          "tools": ["Vite", "FastAPI", "Uvicorn"]
+        },
+        {
+          "id": "obs_logs",
+          "description": "Important flows emit useful logs/metrics"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "compile": "npm --prefix ./ai-code-review run compile"
+  },
+  "dependencies": {
+    "node-fetch": "^2.7.0",
+    "openai": "^4.104.0"
+  },
+  "devDependencies": {
+    "@types/node": "^25.0.9",
+    "@types/node-fetch": "^2.6.13"
+  }
+}
