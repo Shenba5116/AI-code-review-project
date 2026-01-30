@@ -1,0 +1,28 @@
+name: AI Code Review
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  code-review:
+    name: code-review
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+      - name: Install repo deps (if package.json exists)
+        if: "!startsWith(github.event.pull_request.head.repo.full_name, 'dependabot')"
+        run: |
+          if [ -f package.json ]; then
+            npm ci --prefer-offline --no-audit || true
+          fi
+      - name: Run AI Code Review script
+        run: |
+          chmod +x ./scripts/aicode-review.js || true
+          node ./scripts/aicode-review.js
